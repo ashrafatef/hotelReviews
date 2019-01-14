@@ -1,0 +1,5 @@
+<div class="d-flex flex-row list-container">
+  <div class="single-hotel" *ngFor="let hotel of allHotels" (click)="newMessage(hotel)">
+    <app-hotel-card [hotelDetails] = "hotel"></app-hotel-card>
+  </div>
+</div>
