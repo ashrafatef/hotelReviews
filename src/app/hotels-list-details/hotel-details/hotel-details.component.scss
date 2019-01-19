@@ -1,0 +1,35 @@
+@import '../../../assets/styles/Variables';
+
+.hotel-details-container{
+    margin-top: 40px;
+    .hotel-details-header{
+        margin-bottom: 20px;
+        
+        p{
+            margin: 0;
+            color: $primary_header_color;
+            font-family: 'Arvo', serif;
+        }
+        .hotel-name{
+            margin: 15px 0px;
+            color: $primary_header_color;
+            //width: 25%;
+            font-family: 'Arvo', serif;
+        }
+        .neights-selection{
+            //width: 25%;
+        }
+        .custom-select{
+            //width: 50%;
+            outline: 0;
+        }
+        .custom-select:focus{
+            outline: 0;
+        }
+    }
+    .hotel-reviews-container{
+        .review-container{
+            //width: 60%;
+        }
+    }
+}

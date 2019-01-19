@@ -7,12 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HotelCardComponent implements OnInit {
 
-  @Input() hotelDetails ;
-  neightNumber = 1 ;
+  @Input() hotelDetails :{} ;
+  @Input() numberOfNeights : number  = 1;
+  //neightNumber = 1 ;
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -1,7 +1,15 @@
+@import '../../../assets/styles/Variables';
+
 .list-container{
-    width: 100%;
+    //width: 100%;
+    margin-top: 40px;
+    .hotels-list-header{
+        font-family: 'Arvo', serif;
+        color: $primary_header_color;
+        margin-bottom: 30px;
+    }
     .single-hotel{
-        width: 33%;
+        //width: 33%;
         margin: 25px;
     }
 }

@@ -1,0 +1,41 @@
+<div class="row reviews-container">
+  <div class="col-12 reviews-header">
+    <!-- <div class="d-flex flex-row justify-content-center"> -->
+      <div class="row">
+        <div class="col-3">
+          <h3>Reviews</h3>
+        </div>
+        <div class="sort-icons col-sm-4 col-md-3">
+          <div class="" (click)="sorting(0)">
+            <!-- <i class="fas fa-igloo"></i> -->
+            <i class="fa fa-sort-up"></i>
+          </div>
+          <div class="" (click)="sorting(1)">
+            <!-- <i class="fas fa-sort-down"></i> -->
+            <i class="fa fa-sort-down"></i>
+          </div>
+        </div>
+      </div>
+      
+      
+    <!-- </div> -->
+  </div>
+  <div class="col-12 reviews-list-container">
+    <div class="row">
+        <div class="col-12 single-review" *ngFor="let review of currentReviewsPage">
+          <app-hotel-single-review [singleReview]="review"></app-hotel-single-review>
+        </div>
+    </div>
+  </div>
+  <div class="col-12 pagination-container">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"[class.disabled]="currentPageIndex == 0"><a class="page-link" (click)="getPrevPage()">Previous</a></li>
+        <li class="page-item" *ngFor="let item of reviewsPagesList; let i = index">
+          <a class="page-link" (click)="setCurrentPage(i)">{{i+1}}</a>
+        </li>
+        <li class="page-item" [class.disabled]="currentPageIndex == lastPageIndex"><a class="page-link" (click)="getNextPage()">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>

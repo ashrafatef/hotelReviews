@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelsServiceService } from 'src/app/services/hotels-service/hotels-service.service';
+import { DataCommunicationService } from 'src/app/services/data-communication/data-communication.service';
 
 @Component({
   selector: 'app-hotel-details',
@@ -8,10 +9,26 @@ import { HotelsServiceService } from 'src/app/services/hotels-service/hotels-ser
 })
 export class HotelDetailsComponent implements OnInit {
 
-  constructor(private hotelsService : HotelsServiceService) { }
+  hotelDetials :any ;
+  
+
+  constructor(private hotelsService : HotelsServiceService , private dataComm : DataCommunicationService) { }
 
   ngOnInit() {
-    this.hotelsService.currentMessage.subscribe(message => console.log(message))
+    this.dataComm.currentHotel.subscribe(hotelID =>{
+      this.hotelsService.getHotelById(hotelID)
+        .subscribe(details =>{
+          this.hotelDetials = details;
+          console.log(details);
+        })
+    },
+    (err)=>{
+      console.log(err);
+    })
+  }
+
+  onNeightsChange(neightsNumber : number){
+    this.dataComm.onChangeNeightSelection(neightsNumber);
   }
 
 }

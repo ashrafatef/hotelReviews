@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelsServiceService } from 'src/app/services/hotels-service/hotels-service.service';
+import { DataCommunicationService } from 'src/app/services/data-communication/data-communication.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotels-list',
@@ -8,22 +11,29 @@ import { HotelsServiceService } from 'src/app/services/hotels-service/hotels-ser
 })
 export class HotelsListComponent implements OnInit {
 
-  allHotels : any ;
-  constructor(private hotelsService : HotelsServiceService) { }
+  allHotels ;
+  neightsNumber ;
+  constructor(private hotelsService : HotelsServiceService , private dataComm : DataCommunicationService) { }
 
   ngOnInit() {
     this.hotelsService.getAllHotels()
       .subscribe(results =>{
         this.allHotels = results;
-        this.newMessage();
+       
+        this.onHotelSelection();
       });
+
+    this.dataComm.currentNeightsNumber.subscribe((neightsNumber : number)=>{
+      this.neightsNumber = neightsNumber ;      
+      
+    });
   }
 
-  newMessage(hotel ?: any) {
+  onHotelSelection(hotel ?: any) {
     if(!hotel){
       hotel = this.allHotels[0]
     }
-    this.hotelsService.changeMessage(hotel);
+    this.dataComm.onSelectHotel(hotel.id);
   }
 
 }

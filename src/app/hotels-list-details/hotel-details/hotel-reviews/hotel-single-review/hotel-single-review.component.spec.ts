@@ -1,20 +1,20 @@
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { HotelsListComponent } from './hotels-list.component';
+// import { HotelSingleReviewComponent } from './hotel-single-review.component';
 
-// describe('HotelsListComponent', () => {
-//   let component: HotelsListComponent;
-//   let fixture: ComponentFixture<HotelsListComponent>;
+// describe('HotelSingleReviewComponent', () => {
+//   let component: HotelSingleReviewComponent;
+//   let fixture: ComponentFixture<HotelSingleReviewComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ HotelsListComponent ]
+//       declarations: [ HotelSingleReviewComponent ]
 //     })
 //     .compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(HotelsListComponent);
+//     fixture = TestBed.createComponent(HotelSingleReviewComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

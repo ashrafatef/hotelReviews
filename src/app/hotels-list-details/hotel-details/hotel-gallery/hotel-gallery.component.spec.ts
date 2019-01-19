@@ -1,20 +1,20 @@
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { HotelsListComponent } from './hotels-list.component';
+// import { HotelGalleryComponent } from './hotel-gallery.component';
 
-// describe('HotelsListComponent', () => {
-//   let component: HotelsListComponent;
-//   let fixture: ComponentFixture<HotelsListComponent>;
+// describe('HotelGalleryComponent', () => {
+//   let component: HotelGalleryComponent;
+//   let fixture: ComponentFixture<HotelGalleryComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ HotelsListComponent ]
+//       declarations: [ HotelGalleryComponent ]
 //     })
 //     .compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(HotelsListComponent);
+//     fixture = TestBed.createComponent(HotelGalleryComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

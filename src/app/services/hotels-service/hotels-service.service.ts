@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +13,19 @@ export class HotelsServiceService {
 
   constructor(private httpClient : HttpClient) { }
 
+  constructUrl(path : string){
+    return this.backendUrl+path;
+  }
+  url : string ;
   getAllHotels(){
-    return this.httpClient.get(this.backendUrl+'/hotels');
+    this.url = this.constructUrl('/hotels');
+    return this.httpClient.get(this.url);
+    
   }
 
-  private messageSource = new BehaviorSubject("");
-  currentMessage = this.messageSource.asObservable();
-
-
-  changeMessage(message: string) {
-    this.messageSource.next(message)
+  getHotelById(id){
+    this.url = this.constructUrl(`/hotelDetails/${id}`);
+    return this.httpClient.get(this.url);
   }
 
 }
