@@ -8,6 +8,7 @@ export class DataCommunicationService {
 
   constructor() { }
 
+  // this for communication for hotel selection event 
   private selectedHotel = new BehaviorSubject(null);
   currentHotel = this.selectedHotel.asObservable();
   
@@ -15,7 +16,7 @@ export class DataCommunicationService {
   onSelectHotel(hotelId) {
     this.selectedHotel.next(hotelId)
   }
-
+  // this for changing of number of neight event 
   private selectedNeights = new BehaviorSubject(1);
   currentNeightsNumber = this.selectedNeights.asObservable();
 

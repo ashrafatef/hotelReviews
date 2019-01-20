@@ -9,14 +9,14 @@ import { map } from 'rxjs/operators';
 export class HotelsServiceService {
 
 
-  backendUrl = 'http://my-json-server.typicode.com/fly365com/code-challenge'
+  backendUrl = 'http://my-json-server.typicode.com/fly365com/code-challenge';
+  url : string ;
 
   constructor(private httpClient : HttpClient) { }
 
   constructUrl(path : string){
     return this.backendUrl+path;
   }
-  url : string ;
   getAllHotels(){
     this.url = this.constructUrl('/hotels');
     return this.httpClient.get(this.url);
